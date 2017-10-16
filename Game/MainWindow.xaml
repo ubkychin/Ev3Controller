@@ -1,0 +1,90 @@
+﻿<Window x:Class="Game.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:common="clr-namespace:Game.Common"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="350" Width="525">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="60*"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="100*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Image x:Name="Brick1Image" Source="Assets/robot.jpg" Grid.Row="0" Grid.Column="0">
+            <Image.Effect>
+                <BlurEffect Radius="5" />
+            </Image.Effect>
+        </Image>
+        <Image x:Name="Brick2Image" Source="Assets/robot.jpg" Grid.Row="0" Grid.Column="1">
+            <Image.Effect>
+                <BlurEffect Radius="5" />
+            </Image.Effect>
+        </Image>
+        <Image x:Name="Brick3Image" Source="Assets/robot.jpg" Grid.Row="0" Grid.Column="2">
+            <Image.Effect>
+                <BlurEffect Radius="5" />
+            </Image.Effect>
+        </Image>
+        <Image x:Name="Brick4Image" Source="Assets/robot.jpg" Grid.Row="0" Grid.Column="3">
+            <Image.Effect>
+                <BlurEffect Radius="5" />
+            </Image.Effect>
+        </Image>
+        
+        <Ellipse Width="64" Height="64" Grid.Row="1" Grid.Column="0" Stroke="Black" StrokeThickness="5"  />
+        <Ellipse Width="64" Height="64" Grid.Row="1" Grid.Column="1" Stroke="Black" StrokeThickness="5" />
+        <Ellipse Width="64" Height="64" Grid.Row="1" Grid.Column="2" Stroke="Black" StrokeThickness="5" />
+        <Ellipse Width="64" Height="64" Grid.Row="1" Grid.Column="3" Stroke="Black" StrokeThickness="5" />
+        <common:Arc Margin="10" ArcStart="90.0" ArcEnd="180.0" Width="64" Height="64" Grid.Row="1" Grid.Column="0" Stroke="GreenYellow" StrokeThickness="7"  x:Name="Brick1Ring" />
+        <common:Arc Margin="10" ArcStart="90.0" ArcEnd="180.0" Width="64" Height="64" Grid.Row="1" Grid.Column="1" Stroke="GreenYellow" StrokeThickness="7" x:Name="Brick2Ring" RenderTransformOrigin="0.5,0.5"  >
+            <common:Arc.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="90"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </common:Arc.RenderTransform>
+        </common:Arc>
+        <common:Arc Margin="10" ArcStart="90.0" ArcEnd="180.0" Width="64" Height="64" Grid.Row="1" Grid.Column="2" Stroke="GreenYellow" StrokeThickness="7" x:Name="Brick3Ring" RenderTransformOrigin="0.5,0.5"  >
+            <common:Arc.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="180"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </common:Arc.RenderTransform>
+        </common:Arc>
+        <common:Arc Margin="10" ArcStart="90.0" ArcEnd="180.0" Width="64" Height="64" Grid.Row="1" Grid.Column="3" Stroke="GreenYellow" StrokeThickness="7" x:Name="Brick4Ring" RenderTransformOrigin="0.5,0.5"  >
+            <common:Arc.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="270"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </common:Arc.RenderTransform>
+        </common:Arc>
+        
+
+        <Ellipse Width="64" Height="64" Margin="10" Grid.Row="2" Grid.Column="0" Stroke="Yellow" StrokeThickness="5" x:Name="Brick1Color" />
+        <Ellipse Width="64" Height="64" Margin="10" Grid.Row="2" Grid.Column="1" Stroke="Red" StrokeThickness="5" x:Name="Brick2Color" />
+        <Ellipse Width="64" Height="64" Margin="10" Grid.Row="2" Grid.Column="2" Stroke="Black" StrokeThickness="5" x:Name="Brick3Color" />
+        <Ellipse Width="64" Height="64" Margin="10" Grid.Row="2" Grid.Column="3" Stroke="Blue" StrokeThickness="5" x:Name="Brick4Color" />
+
+        <ComboBox x:Name="Brick1Comport" Tag="0"  Grid.Row="3" Grid.Column="0" Height="25" Margin="5" SelectionChanged="BrickComport_SelectionChanged" ></ComboBox>
+        <ComboBox x:Name="Brick2Comport" Tag="1" Grid.Row="3" Grid.Column="1" Height="25" Margin="5" SelectionChanged="BrickComport_SelectionChanged" ></ComboBox>
+        <ComboBox x:Name="Brick3Comport" Tag="2" Grid.Row="3" Grid.Column="2" Height="25" Margin="5" SelectionChanged="BrickComport_SelectionChanged" ></ComboBox>
+        <ComboBox x:Name="Brick4Comport" Tag="3" Grid.Row="3" Grid.Column="3" Height="25" Margin="5" SelectionChanged="BrickComport_SelectionChanged" ></ComboBox>
+    </Grid>
+</Window>
